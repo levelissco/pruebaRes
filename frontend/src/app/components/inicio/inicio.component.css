@@ -1,0 +1,17 @@
+.margenGrande {
+    margin-top: 100px;
+}
+
+.margenMediano {
+    margin-top: 100px;
+}
+
+.imagenUsuario {
+    width: 40%;
+}
+
+.color .mat-dialog-container {
+    border-radius: 50px;
+    background: lightcyan;
+    color: #039be5;
+}

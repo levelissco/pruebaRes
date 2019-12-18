@@ -1,0 +1,21 @@
+.container-num-control {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-num-control>* {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+}
+
+.borde {
+    border: double;
+    border-radius: 10px;
+}
+
+tr.mat-footer-row {
+    font-weight: bold;
+}
