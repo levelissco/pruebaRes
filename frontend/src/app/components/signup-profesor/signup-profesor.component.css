@@ -1,0 +1,15 @@
+.registro {
+    width: 50%;
+    margin: auto;
+}
+
+.imagen {
+    width: 10%;
+    border-radius: 50px;
+}
+
+.mat-raised-button {
+    background-color: #1b5583;
+    border-radius: 0 px !important;
+    color: white;
+}

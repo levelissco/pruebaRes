@@ -1,19 +1,9 @@
-.logo {
-    height: 100%;
-    width: 100%;
-    text-align: center;
-}
-
-.centrarVertical {
-    margin: 10px auto;
-    width: 100%;
-    background-color: #E7F6F6;
-    border: 1px solid #99cccc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.iniciaSesion {
+.iniciarSesion {
     width: 50%;
+    margin: auto;
+}
+
+.imagen {
+    width: 10%;
+    border-radius: 50px;
 }

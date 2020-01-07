@@ -1,20 +1,26 @@
-<div class="col-md-12">
-    <app-navegacion>
+<mat-drawer-container class="sidenav">
+    <mat-drawer mode="side" opened class="bg-azul">
+        <app-navegacion>
 
-    </app-navegacion>
-</div>
-<div class="col-md-4" *ngFor="let materia of materias">
-    <div class="card text-center mt-5">
-        <div class="card-header d-flex justify-content-between align-items-center">
-            <h5>{{materia.nombre_materia}} </h5><i class="fa fa-edit"></i>
-        </div>
-        <div class="card-body">
-            <div *ngFor="let grupo of grupos">
-                <h4 *ngIf="grupo.nombre_materia == materia.nombre_materia">
-                    <button #boton mat-button (click)="openDialog(boton._elementRef.nativeElement)" [id]="grupo.clave_materia" [name]="grupo.clave_grupo"> {{ grupo.clave_grupo }}</button>
-                </h4>
-                <p *ngIf="grupo.nombre_materia == materia.nombre_materia">{{grupo.hora_inicio}}--{{grupo.hora_final}}</p>
+        </app-navegacion>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div class="row mx-auto">
+            <div class="col-md-4" *ngFor="let materia of materias">
+                <div class="card text-center mt-5">
+                    <div class="card-header d-flex justify-content-between align-items-center bg-azul-txt-white">
+                        <h5 class="bg-azul-txt-white">{{materia.nombre_materia}} </h5><i class="fa fa-edit"></i>
+                    </div>
+                    <div class="card-body">
+                        <div *ngFor="let grupo of grupos">
+                            <h4 *ngIf="grupo.nombre_materia == materia.nombre_materia">
+                                <button #boton mat-button (click)="openDialog(boton._elementRef.nativeElement)" [id]="grupo.id_grupo" [name]="grupo.clave_materia"> {{ grupo.clave_grupo }}</button>
+                            </h4>
+                            <p *ngIf="grupo.nombre_materia == materia.nombre_materia">{{grupo.hora_inicio}}--{{grupo.hora_final}}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+    </mat-drawer-content>
+</mat-drawer-container>

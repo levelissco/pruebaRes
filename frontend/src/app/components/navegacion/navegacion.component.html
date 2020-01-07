@@ -1,18 +1,19 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-        <a class="navbar-brand" routerLink="/">Seguimiento</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/grupos" routerLinkActive="active"><i class="fa fa-users"></i> Grupos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/grupo/add" routerLinkActive="active"><i class="fa fa-plus-circle"></i> Add grupo</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<div class="recuadroNav">
+    <a class="navbar-link tipografia collision-blue" routerLink="/dashboard"><i class="fa fa-chart-line"></i>Dashboard</a>
+</div>
+<mat-divider class="text-white"></mat-divider>
+<div class="recuadroNav">
+    <a class="nav-link tipografia collision" routerLink="/profile" routerLinkActive="active"><i class="fa fa-user"></i>  Cuenta</a>
+</div>
+<mat-divider class="text-white"></mat-divider>
+<div class="recuadroNav">
+    <a class="nav-link tipografia collision" routerLink="/grupos" routerLinkActive="active"><i class="fa fa-users"></i>  Grupos</a>
+</div>
+<mat-divider class="text-white"></mat-divider>
+<div class="recuadroNav">
+    <a class="nav-link tipografia collision" routerLink="/grupo/add" routerLinkActive="active"><i class="fa fa-plus-circle"></i>  Add grupo</a>
+</div>
+<mat-divider class="text-white"></mat-divider>
+<div class="recuadroNav">
+    <button mat-button color="warn" (click)="logOut()" class="tipografia collision-red"><i class="fa fa-sign-out-alt"></i>  LogOut</button>
+</div>

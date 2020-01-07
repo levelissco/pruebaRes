@@ -12,15 +12,18 @@ export class GruposService {
    }
 
   
-  getGrupos(clave_profesor: number ){
+  getMaterias(clave_profesor: number ){
     return this.http.get(`${this.API_URI}/grupo/${clave_profesor}`);
   }
-  getGruposDistintos(clave_profesor: number ){
-    return this.http.get(`${this.API_URI}/grupo/${clave_profesor}`);
+  findGrupo(id_grupo: string){
+    return this.http.get(`${this.API_URI}/grupo/findGrupo/${id_grupo}`);
   }
-  getGrupoMateria(clave_profesor: number, clave_materia: string ){
-    return this.http.get(`${this.API_URI}/grupo/${clave_profesor}/${clave_materia}`);
-  }
+  // getGruposDistintos(clave_profesor: number ){
+  //   return this.http.get(`${this.API_URI}/grupo/${clave_profesor}`);
+  // }
+  // getGrupoMateria(clave_profesor: number, clave_materia: string ){
+  //   return this.http.get(`${this.API_URI}/grupo/${clave_profesor}/${clave_materia}`);
+  // }
   saveGrupo(grupo: Grupo){
     return this.http.post(`${this.API_URI}/grupo`, grupo);
   }

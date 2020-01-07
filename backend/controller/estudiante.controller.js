@@ -19,15 +19,16 @@ estudianteCtrl.getEstudiantes = (req, res) => {
         if (!err) {
             res.json(rows);
         } else {
-            console.log('Ocurrio un error: ' + err);
+            console.log('Estudiantes: Ocurrio un error: ' + err);
         }
     });
 }
 
 estudianteCtrl.createEstudiante = (req, res) => {
-    const { num_control, nombre_estudiante } = req.body;
-    const params = [num_control, nombre_estudiante];
-    const consulta = 'insert into estudiante values (?, ?)';
+    const { num_control, nombre, password } = req.body;
+    const params = [num_control, nombre, password];
+    console.log(params);
+    const consulta = 'insert into estudiante (num_control, nombre_est, password_est) values (?, ?, ?)';
     conexion.query(consulta, params, (err, rows, fields) => {
         if (!err) {
             res.json({ text: 'Se agrego nuevo estudiante' });

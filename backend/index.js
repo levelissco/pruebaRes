@@ -15,9 +15,13 @@ server.use(cors({ origin: 'http://localhost:4200' }));
 
 //routes
 server.use('/api/estudiante/', require('./routes/estudiante.routes'));
+server.use('/api/profesor/', require('./routes/profesor.route'));
 server.use('/api/materia/', require('./routes/materia.routes'));
 server.use('/api/grupo/', require('./routes/grupo.routes'));
-server.use('/api/clase/', require('./routes/clase.routes'));
+server.use('/api/detalleGrupo/', require('./routes/detalleGrupo.routes'));
+server.use('/api/criterio/', require('./routes/criterio.routes'));
+server.use('/api/email', require('./routes/email.routes'));
+server.use('/api/asistencia', require('./routes/asistencia.routes'));
 
 //start server
 server.listen(server.get('port'), () => {

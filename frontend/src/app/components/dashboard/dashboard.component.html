@@ -1,0 +1,19 @@
+<mat-drawer-container class="sidenav">
+    <mat-drawer mode="side" opened class="bg-azul">
+        <app-navegacion>
+        </app-navegacion>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <h1 *ngIf="hora < 12 && hora > 4" class="mx-auto">Buenos Dias Profesor {{apellido}}</h1>
+
+                <h1 *ngIf="hora > 11 && hora < 19">Buenos Tardes Profesor {{apellido}}</h1>
+
+                <h1 *ngIf="hora > 18 && hora > 4">Buenos Noches Profesor {{apellido}}</h1>
+            </div>
+        </div>
+        <app-graficas>
+        </app-graficas>
+    </mat-drawer-content>
+</mat-drawer-container>

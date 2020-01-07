@@ -1,0 +1,24 @@
+.tabla {
+    height: 270px;
+    width: 350px;
+    overflow: auto;
+}
+
+.tab {
+    height: 270px;
+    overflow: auto;
+}
+
+table {
+    width: 100%;
+}
+
+tr.mat-footer-row,
+mat-header-cell {
+    font-weight: bold;
+    color: black;
+}
+
+.centrar {
+    text-align: center;
+}

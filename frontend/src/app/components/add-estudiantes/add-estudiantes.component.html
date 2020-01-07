@@ -1,0 +1,13 @@
+<mat-card class="mat-elevation-z8">
+    <mat-card-content>
+        <mat-card-title>Subir archivo de estudiantes</mat-card-title>
+        <div class="custom-file">
+            <input type="file" class="custom-file-imput" id="input-custom-file" (change)="onChange($event)" accept=".xlsx, .csv">
+            <label class="custom-file-label" for="input-custom-file">Selecciona un archivo</label>
+        </div>
+    </mat-card-content>
+    <mat-card-actions class="">
+        <button mat-raised-button (click)="saveEstudiantes()">Guardar</button>
+        <button mat-raised-button (click)="viewEstudiantes()">Visualizar</button>
+    </mat-card-actions>
+</mat-card>

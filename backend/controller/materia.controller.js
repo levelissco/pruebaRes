@@ -1,7 +1,7 @@
 const conexion = require('../conexion');
 const materiaCtrl = {};
 
-materiaCtrl.getMateria = async(req, res) => {
+materiaCtrl.getMateria = (req, res) => {
     const clave_materia = req.params.clave_materia;
     const consulta = 'select * from materia where clave_materia = ?';
     conexion.query(consulta, [clave_materia], (err, rows, fields) => {
@@ -13,7 +13,7 @@ materiaCtrl.getMateria = async(req, res) => {
     });
 }
 
-materiaCtrl.getMaterias = async(req, res) => {
+materiaCtrl.getMaterias = (req, res) => {
     const consulta = 'select * from materia';
     conexion.query(consulta, (err, rows, fields) => {
         if (!err) {

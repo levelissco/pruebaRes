@@ -1,0 +1,20 @@
+<mat-card class="mat-elevation-z8">
+    <form (ngSubmit)="saveCriterio()" novalidate #formulario="ngForm" class="text-center">
+        <mat-card-content>
+            <div class="mx-auto">
+                unidad {{unidad}}
+                <mat-card-title>Nuevo Criterio</mat-card-title>
+            </div>
+            <mat-form-field appearance="outline" class="inputs">
+                <input matInput #newCriterio [(ngModel)]="criterio.nombre" name="criterio" placeholder="Nombre del criterio" ngModel required>
+                <mat-error *ngIf="newCriterio.invalid">Nombre de criterio invalido</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="inputs">
+                <input matInput [(ngModel)]="criterio.porcentaje" name="porcentaje" placeholder="porcentaje" ngModel required>
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button type="submit" [disabled]="formulario.invalid">Guardar</button>
+        </mat-card-actions>
+    </form>
+</mat-card>

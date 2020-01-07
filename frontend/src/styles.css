@@ -3,6 +3,7 @@
 html,
 body {
     height: 100%;
+    background-image: url('assets/fondos/fondo-patron.jpg');
 }
 
 body {
@@ -27,4 +28,62 @@ body {
 
 .bg-azul {
     background: #1b5583;
+}
+
+.bg-azul-txt-white {
+    background: #1b5583;
+    color: white;
+}
+
+.bg-azul-transparente {
+    background-color: rgba(27, 85, 131, 0.7);
+}
+
+.mat-raised-button {
+    background-color: #1b5583;
+    border-radius: 0 px !important;
+    color: white;
+}
+
+.tabla-head {
+    color: black;
+    font-size: large;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+mat-drawer-content {
+    background-color: rgba(27, 84, 131, 0.589);
+}
+
+.fa-plus-circle {
+    color: green;
+}
+
+.fa-eye {
+    color: blue;
+}
+
+.fa-chart-line {
+    color: yellow;
+    margin-right: 2mm;
+    margin-left: 2mm;
+}
+
+.fa-users,
+.fa-user {
+    color: lightskyblue;
+}
+
+.fa-trash-alt,
+.fa-sign-out-alt {
+    color: red;
+}
+
+.fa-plus-circle,
+.fa-eye,
+.fa-users,
+.fa-user,
+.fa-sign-out-alt {
+    margin-right: 2mm;
 }

@@ -6,6 +6,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Materia } from 'src/app/models/materia';
 
 import {FormControl, Validators} from '@angular/forms';
+import { StorageMap } from '@ngx-pwa/local-storage';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-grupo',
@@ -30,13 +32,20 @@ export class CreateGrupoComponent implements OnInit {
   grupo: Grupo = {
     clave_materia: '',
     clave_grupo: '',
-    clave_profesor: 0,
+    clave_profesor: '',
     hora_inicio: this.horaInicio,
     hora_final: this.horaFinal
   }
+  clave_profesor: any;
   constructor(private materiaService: MateriaService,
     private gruposService: GruposService,
-    private _snackBar: MatSnackBar) { }
+    private _snackBar: MatSnackBar,
+    private storage: StorageMap, private router: Router,) {
+      this.storage.get('clave_profesor').subscribe((profesor) => {
+        this.clave_profesor = profesor;
+        this.grupo.clave_profesor=this.clave_profesor;
+      });
+    }
 
   ngOnInit() {
     this.materiaService.getMaterias().subscribe(
@@ -52,8 +61,7 @@ export class CreateGrupoComponent implements OnInit {
     this.gruposService.saveGrupo(this.grupo).subscribe(
       res => {
         this.openSnackBar('Se creo nuevo grupo');
-        this.resetForm();
-        console.log(res)
+        this.resetForm(); 
       },
       err => console.log(err)
     );
@@ -119,5 +127,10 @@ export class CreateGrupoComponent implements OnInit {
     this.materia.clave_materia = '';
     this.materia.nombre_materia = '';
     this.materia.unidades = 0;
+  }
+  logOut(){
+    this.storage.delete('clave_profesor').subscribe(() => { 
+      this.router.navigate(['/'])
+    });
   }
 }

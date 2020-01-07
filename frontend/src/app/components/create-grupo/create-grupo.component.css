@@ -1,3 +1,29 @@
 .blue-snackbar {
     background: #2196F3;
 }
+
+.sidenav {
+    width: 100%;
+    height: 595px;
+    margin: 10px;
+    border: 1px solid #555;
+}
+
+.side {
+    width: 200px;
+    padding-left: 20px;
+    text-align: left;
+    background-color: #1b5583;
+}
+
+.tipografia {
+    color: white;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.recuadroNav {
+    height: 70px;
+    background-color: black;
+    opacity: 0.7;
+    align-items: center;
+}

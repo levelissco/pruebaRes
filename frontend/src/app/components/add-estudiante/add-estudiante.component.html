@@ -1,0 +1,18 @@
+<mat-card class="mat-elevation-z8">
+    <form (ngSubmit)="saveEstudiante()" novalidate #formulario="ngForm">
+        <mat-card-content>
+            <mat-card-title>Nuevo estudiante</mat-card-title>
+            <mat-form-field hintLabel="8 digitos" class="inputs">
+                <input matInput #num_control maxlength="8" minlength="8" [(ngModel)]="estudiante.num_control" name="num_control" placeholder="Numero de control" (blur)="validateEstudiante()" pattern="[1-9]+[0-9]+" ngModel required>
+                <mat-hint align="end">{{num_control.value?.length || 0}}/8</mat-hint>
+                <mat-error *ngIf="num_control.invalid">Numero de control invalido</mat-error>
+            </mat-form-field>
+            <mat-form-field class="inputs">
+                <input matInput [(ngModel)]="estudiante.nombre" name="nombre" placeholder="Nombre completo" ngModel required>
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button [disabled]="formulario.invalid" type="submit">Guardar</button>
+        </mat-card-actions>
+    </form>
+</mat-card>
